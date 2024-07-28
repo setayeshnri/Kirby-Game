@@ -34,6 +34,6 @@ export async function makeMap(k: KaboomCtx, name: string) {
         spawnPoints[spawnPoint.name] = [{ x: spawnPoint.x, y: spawnPoint.y }];
       }
     }
-  }
-  return { map, spawnPoints };
+  }return {map, spawnPoints};
 }
+

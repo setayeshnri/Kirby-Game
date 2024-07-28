@@ -1,5 +1,7 @@
+import { makePlayer } from "./entities";
 import { k } from "./kaboomCtx";
 import { makeMap } from "./utils";
+
 async function gameSetup() {
   k.loadSprite("assets", "./kirby-like.png", {
     sliceX: 9,
@@ -22,6 +24,14 @@ async function gameSetup() {
     k,
     "level-1"
   );
+  if (
+    !level1SpawnPoints ||
+    !level1SpawnPoints.player ||
+    level1SpawnPoints.player.length === 0
+  ) {
+    console.error("Player spawn points are not defined or empty");
+    return;
+  }
   k.scene("level-1", () => {
     k.setGravity(2100);
     k.add([
@@ -30,6 +40,18 @@ async function gameSetup() {
       k.fixed(),
     ]);
     k.add(level1Layout);
+
+    const kirb = makePlayer(
+      k,
+      level1SpawnPoints.player[0].x,
+      level1SpawnPoints.player[0].y
+    );
+    k.add(kirb);
+    k.camScale(0.7, 0.7);
+    k.onUpdate(() => {
+      if (kirb.pos.x < level1Layout.pos.x + 432)
+        k.camPos(kirb.pos.x + 500, 800);
+    });
   });
   k.go("level-1");
 }
