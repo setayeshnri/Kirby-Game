@@ -1,4 +1,12 @@
 { "compressionlevel":-1,
+ "editorsettings":
+    {
+     "export":
+        {
+         "format":"json",
+         "target":"level-1..tmj"
+        }
+    },
  "height":20,
  "infinite":false,
  "layers":[
@@ -176,6 +184,17 @@
                  "width":0,
                  "x":344.601381685492,
                  "y":327.791558188639
+                }, 
+                {
+                 "height":15.4196343343858,
+                 "id":29,
+                 "name":"exit",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":18.7238416917542,
+                 "x":270.394302077979,
+                 "y":256.443204346868
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -233,8 +252,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":431.821546661403,
-                 "y":95.2474954350294
+                 "x":427.90841811513,
+                 "y":152.966141492552
                 }, 
                 {
                  "height":0,
@@ -245,8 +264,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":400.23688496274,
-                 "y":109.559295267236
+                 "x":409.041424191854,
+                 "y":172.1693520076
                 }, 
                 {
                  "height":0,
@@ -267,7 +286,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":28,
+ "nextobjectid":30,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",
@@ -275,7 +294,7 @@
  "tilesets":[
         {
          "firstgid":1,
-         "source":"kirby-like.tsx"
+         "source":"kirby-like.tsj"
         }],
  "tilewidth":16,
  "type":"map",
