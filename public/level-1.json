@@ -3,8 +3,7 @@
     {
      "export":
         {
-         "format":"json",
-         "target":"level-1..tmj"
+         "format":"json"
         }
     },
  "height":20,
@@ -175,17 +174,6 @@
                  "y":208.277813082963
                 }, 
                 {
-                 "height":0,
-                 "id":17,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":344.601381685492,
-                 "y":327.791558188639
-                }, 
-                {
                  "height":15.4196343343858,
                  "id":29,
                  "name":"exit",
@@ -210,7 +198,7 @@
                 {
                  "height":0,
                  "id":20,
-                 "name":"Player",
+                 "name":"player",
                  "point":true,
                  "rotation":0,
                  "type":"",
@@ -286,7 +274,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":30,
+ "nextobjectid":34,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",

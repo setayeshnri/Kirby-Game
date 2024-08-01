@@ -1,4 +1,4 @@
-import { makePlayer } from "./entities";
+import { makePlayer, setControls } from "./entities";
 import { k } from "./kaboomCtx";
 import { makeMap } from "./utils";
 
@@ -29,8 +29,6 @@ async function gameSetup() {
     !level1SpawnPoints.player ||
     level1SpawnPoints.player.length === 0
   ) {
-    console.error("Player spawn points are not defined or empty");
-    return;
   }
   k.scene("level-1", () => {
     k.setGravity(2100);
@@ -46,6 +44,7 @@ async function gameSetup() {
       level1SpawnPoints.player[0].x,
       level1SpawnPoints.player[0].y
     );
+    setControls(k, kirb);
     k.add(kirb);
     k.camScale(0.7, 0.7);
     k.onUpdate(() => {
