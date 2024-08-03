@@ -173,6 +173,6 @@ async function gameSetup() {
     }
   });
   k.scene("end", () => {});
-  k.go("level-1");
+  k.go("level-3");
 }
 gameSetup();
