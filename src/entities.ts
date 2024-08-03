@@ -11,6 +11,7 @@ import {
   SpriteComp,
 } from "kaboom";
 import { scale } from "./constants";
+import { globalGameState } from "./state";
 type PlayerGameObj = GameObj<
   SpriteComp &
     AreaComp &
@@ -53,7 +54,7 @@ export function makePlayer(k: KaboomCtx, posX: number, posY: number) {
     }
     if (player.hp() === 0) {
       k.destroy(player);
-      k.go("level-1");
+      k.go(globalGameState.currentScene);
       return;
     }
     player.hurt();
@@ -101,7 +102,7 @@ export function makePlayer(k: KaboomCtx, posX: number, posY: number) {
   });
   player.onUpdate(() => {
     if (player.pos.y > 2000) {
-      k.go("level-1");
+      k.go(globalGameState.currentScene);
     }
   });
   return player;

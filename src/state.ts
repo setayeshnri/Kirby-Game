@@ -1,11 +1,9 @@
-import { SceneName } from "kaboom";
-
 export const globalGameState: {
   scenes: string[];
   nextScene: string;
   currentScene: string;
-  setNextScene: (SceneName: string) => void;
-  setCurrentscene: (SceneName: string) => void;
+  setNextScene: (sceneName: string) => void;
+  setCurrentscene: (sceneName: string) => void;
 } = {
   scenes: ["level-1", "level-2", "end"],
   nextScene: "",
