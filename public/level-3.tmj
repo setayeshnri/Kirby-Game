@@ -1,4 +1,12 @@
 { "compressionlevel":-1,
+ "editorsettings":
+    {
+     "export":
+        {
+         "format":"json",
+         "target":"level-3.json"
+        }
+    },
  "height":20,
  "infinite":false,
  "layers":[
@@ -268,8 +276,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":91.0611089636984,
-                 "y":227.115615574525
+                 "x":143.442061344651,
+                 "y":184.258472717382
                 }, 
                 {
                  "height":0,

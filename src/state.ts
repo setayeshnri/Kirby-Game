@@ -5,7 +5,7 @@ export const globalGameState: {
   setNextScene: (sceneName: string) => void;
   setCurrentscene: (sceneName: string) => void;
 } = {
-  scenes: ["level-1", "level-2", "end"],
+  scenes: ["level-1", "level-2","level-3", "end"],
   nextScene: "",
   currentScene: "level-1",
   setCurrentscene(sceneName: string) {
