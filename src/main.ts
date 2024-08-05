@@ -113,10 +113,10 @@ async function gameSetup() {
     );
     setControls(k, kirb);
     k.add(kirb);
-    k.camScale(k.vec2(0.66));
+    k.camScale(k.vec2(0.67));
     k.onUpdate(() => {
-      if (kirb.pos.x < level2Layout.pos.x + 2100)
-        k.camPos(kirb.pos.x + 500, 760);
+      if (kirb.pos.x < level3Layout.pos.x + 1000)
+        k.camPos(kirb.pos.x + 500, 650);
     });
     for (const flame of level2SpawnPoints.flame) {
       makeFlameEnemy(k, flame.x, flame.y);
@@ -154,10 +154,10 @@ async function gameSetup() {
     );
     setControls(k, kirb);
     k.add(kirb);
-    k.camScale(k.vec2(0.67));
+    k.camScale(k.vec2(0.66));
     k.onUpdate(() => {
-      if (kirb.pos.x < level3Layout.pos.x + 1000)
-        k.camPos(kirb.pos.x + 500, 650);
+      if (kirb.pos.x < level3Layout.pos.x + 2100)
+        k.camPos(kirb.pos.x + 500, 760);
     });
     for (const flame of level3SpawnPoints.flame) {
       makeFlameEnemy(k, flame.x, flame.y);
