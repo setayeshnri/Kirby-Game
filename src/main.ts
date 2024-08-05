@@ -29,6 +29,7 @@ async function gameSetup() {
   k.loadSprite("level-1", "./level-1.png");
   k.loadSprite("level-2", "./level-2.png");
   k.loadSprite("level-3", "./level-3.png");
+  k.loadSprite("level-4", "./level-4.png");
   k.add([k.rect(k.width(), k.height()), k.color(0, 0, 0), k.fixed()]);
 
   const { map: level1Layout, spawnPoints: level1SpawnPoints } = await makeMap(
@@ -42,6 +43,10 @@ async function gameSetup() {
   const { map: level3Layout, spawnPoints: level3SpawnPoints } = await makeMap(
     k,
     "level-3"
+  );
+  const { map: level4Layout, spawnPoints: level4SpawnPoints } = await makeMap(
+    k,
+    "level-4"
   );
   if (
     !level1SpawnPoints ||
@@ -133,7 +138,7 @@ async function gameSetup() {
   });
   k.scene("level-3", () => {
     globalGameState.setCurrentscene("level-3");
-    globalGameState.setNextScene("level-1");
+    globalGameState.setNextScene("level-4");
     k.setGravity(2100);
     k.add([
       k.rect(k.width(), k.height()),
@@ -161,6 +166,47 @@ async function gameSetup() {
       makeGuyEnemy(k, guy.x, guy.y);
     }
     for (const bird of level3SpawnPoints.bird) {
+      const possibleSpeeds = [100, 200, 300];
+      k.loop(10, () => {
+        makeBirdEnemy(
+          k,
+          bird.x,
+          bird.y,
+          possibleSpeeds[Math.floor(Math.random() * possibleSpeeds.length)]
+        );
+      });
+    }
+  });
+  k.scene("level-4", () => {
+    globalGameState.setCurrentscene("level-4");
+    globalGameState.setNextScene("level-1");
+    k.setGravity(2100);
+    k.add([
+      k.rect(k.width(), k.height()),
+      k.color(k.Color.fromHex("#f7d7db")),
+      k.fixed(),
+    ]);
+    k.add(level4Layout);
+
+    const kirb = makePlayer(
+      k,
+      level4SpawnPoints.player[0].x,
+      level4SpawnPoints.player[0].y
+    );
+    setControls(k, kirb);
+    k.add(kirb);
+    k.camScale(k.vec2(0.67));
+    k.onUpdate(() => {
+      if (kirb.pos.x < level4Layout.pos.x + 2700)
+        k.camPos(kirb.pos.x + 500, 650);
+    });
+    for (const flame of level4SpawnPoints.flame) {
+      makeFlameEnemy(k, flame.x, flame.y);
+    }
+    for (const guy of level4SpawnPoints.guy) {
+      makeGuyEnemy(k, guy.x, guy.y);
+    }
+    for (const bird of level4SpawnPoints.bird) {
       const possibleSpeeds = [100, 200, 300];
       k.loop(10, () => {
         makeBirdEnemy(
