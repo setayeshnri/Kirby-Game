@@ -7,8 +7,26 @@ import {
   makePlayer,
   setControls,
 } from "./entities";
-
+import { instructionsHTML } from "./instructions.ts";
 import { makeMap } from "./utils";
+instructionsHTML();
+function startGame() {
+  const instructionsElement = document.getElementById("instructions");
+  if (instructionsElement) {
+    
+    instructionsElement.remove();
+
+  }
+  gameSetup();
+}
+function handleKeyDown(event:KeyboardEvent){
+   if (event.key === "Enter") {
+    startGame();
+    
+    document.removeEventListener("keydown", handleKeyDown);
+  }
+}
+document.addEventListener("keydown", handleKeyDown);
 
 async function gameSetup() {
   k.loadSprite("assets", "./kirby-like.png", {
