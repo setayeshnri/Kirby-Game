@@ -9,20 +9,22 @@ import {
 } from "./entities";
 import { instructionsHTML } from "./instructions.ts";
 import { makeMap } from "./utils";
+import { musicToggleHTML } from "./musicToggle.ts";
+
 instructionsHTML();
+musicToggleHTML();
 function startGame() {
   const instructionsElement = document.getElementById("instructions");
   if (instructionsElement) {
-    
     instructionsElement.remove();
-
   }
+
   gameSetup();
 }
-function handleKeyDown(event:KeyboardEvent){
-   if (event.key === "Enter") {
+function handleKeyDown(event: KeyboardEvent) {
+  if (event.key === "Enter") {
     startGame();
-    
+
     document.removeEventListener("keydown", handleKeyDown);
   }
 }

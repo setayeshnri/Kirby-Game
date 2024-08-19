@@ -1,0 +1,18 @@
+#toggle {
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+  position: absolute;
+  background-color: #e84b6a;
+  right: 40px;
+  top: 70px;
+  border-radius: 30px;
+  display: block;
+  z-index: 1100;
+  cursor: pointer;
+}
+#toggle:hover {
+  width: 38px;
+  height: 38px;
+  transition: 0.15s ease-in;
+}
