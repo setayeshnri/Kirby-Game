@@ -12,30 +12,6 @@ export function musicToggleHTML() {
   let musicInstance: any;
   let isPlaying: boolean = false;
 
-  function loadMusic() {
-    return k.loadSound("music", "./src/styles/assets/Pixelland.mp3");
-  }
-
-  function playMusic() {
-    if (!musicInstance) {
-      loadMusic().then(() => {
-        musicInstance = k.play("music", {
-          loop: true,
-          volume: 0.5,
-        });
-      });
-    } else {
-      musicInstance.play(); // Start music if it's already loaded but not playing
-    }
-  }
-
-  function stopMusic() {
-    if (musicInstance) {
-      musicInstance.stop();
-      musicInstance = null; // Clear the reference to allow reloading
-    }
-  }
-
   const musicBtn = document.getElementById("toggle") as HTMLImageElement;
 
   musicBtn.addEventListener("click", () => {
@@ -49,4 +25,37 @@ export function musicToggleHTML() {
       musicBtn.src = "src/styles/assets/volume-off.svg";
     }
   });
+
+  function loadMusic() {
+    return k.loadSound("music", "./src/styles/assets/Pixelland.mp3");
+  }
+
+  function playMusic() {
+    if (!musicInstance) {
+      loadMusic().then(() => {
+        musicInstance = k.play("music", {
+          loop: true,
+          volume: 0.5,
+        });
+      });
+      focusGameCanvas();
+    } else {
+      musicInstance.play();
+    }
+  }
+
+  function stopMusic() {
+    if (musicInstance) {
+      musicInstance.stop();
+      musicInstance = null;
+    }
+    focusGameCanvas();
+  }
+
+  function focusGameCanvas() {
+    const gameCanvas = document.querySelector("canvas");
+    if (gameCanvas) {
+      gameCanvas.focus();
+    }
+  }
 }
