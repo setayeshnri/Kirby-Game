@@ -19,11 +19,11 @@ export function musicToggleHTML() {
     if (!isPlaying) {
       playMusic();
       isPlaying = true;
-      musicBtn.src = "src/styles/assets/volume-on.svg";
+      musicBtn.src = musicOn
     } else {
       stopMusic();
       isPlaying = false;
-      musicBtn.src = "src/styles/assets/volume-off.svg";
+      musicBtn.src = musicOff;
     }
   });
 
