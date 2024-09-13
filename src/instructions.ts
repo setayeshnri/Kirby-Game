@@ -1,4 +1,9 @@
 import './styles/instructions.css'
+import arrowUp from "./styles/assets/arrow_up.svg";
+import arrowDown from "./styles/assets/arrow_down.svg";
+import arrowLeft from "./styles/assets/arrow_left.svg";
+import arrowright from "./styles/assets/arrow_right.svg";
+
 export function instructionsHTML() {
   const container = document.createElement("div");
   
@@ -18,18 +23,18 @@ export function instructionsHTML() {
       <div class="arrows">
         <div style="display: flex">
           <div class="arrow-buttons" style="margin-top: 25px">
-            <img src="src/styles/assets/arrow_left.svg" alt="" />
+            <img src="${arrowLeft}" alt="" />
           </div>
           <div class="arrow-keys">
             <div class="arrow-buttons" style="margin-bottom: 10px">
-              <img src="src/styles/assets/arrow_up.svg" alt="" />
+              <img src="${arrowUp}" alt="" />
             </div>
             <div class="arrow-buttons">
-              <img src="src/styles/assets/arrow_down.svg" alt="" />
+              <img src="${arrowDown}" alt="" />
             </div>
           </div>
           <div class="arrow-buttons up-down" style="margin-top: 25px">
-            <img src="src/styles/assets/arrow_right.svg" alt="" />
+            <img src="${arrowright}" alt="" />
           </div>
         </div>
         <div class="instructions">

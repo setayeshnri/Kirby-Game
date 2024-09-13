@@ -1,11 +1,12 @@
 import "./styles/musicToggle.css";
 import { k } from "./kaboomCtx";
-
+import musicOff from "./styles/assets/volume-off.svg";
+import musicOn from "./styles/assets/volume-on.svg";
 export function musicToggleHTML() {
   const toggleContainer = document.createElement("div");
 
   toggleContainer.innerHTML = `
-    <img id="toggle" src="src/styles/assets/volume-off.svg" />
+    <img id="toggle" src="${musicOff}" />
   `;
   document.body.appendChild(toggleContainer);
 
