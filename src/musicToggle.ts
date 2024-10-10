@@ -2,6 +2,7 @@ import "./styles/musicToggle.css";
 import { k } from "./kaboomCtx";
 import musicOff from "./styles/assets/volume-off.svg";
 import musicOn from "./styles/assets/volume-on.svg";
+import Music from './styles/assets/Pixelland.mp3';
 export function musicToggleHTML() {
   const toggleContainer = document.createElement("div");
 
@@ -28,7 +29,7 @@ export function musicToggleHTML() {
   });
 
   function loadMusic() {
-    return k.loadSound("music", "./src/styles/assets/Pixelland.mp3");
+    return k.loadSound("music", Music);
   }
 
   function playMusic() {
